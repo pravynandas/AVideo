@@ -82,6 +82,8 @@ if (!empty($_GET['type'])) {
             if ($value['parameters']->type === $_GET['type']) {
                 $id = $obj->id;
                 $key = $obj->key;
+                $url = $obj->url; //only for keycloak
+                $realm = $obj->realm; //only for keycloak
                 break;
             }
         }
@@ -99,17 +101,24 @@ if (!empty($_GET['type'])) {
         if ($_GET['type'] === 'LinkedIn') {
             $scope = ("r_liteprofile r_emailaddress w_member_social");
         }
+        $_config = [
+            'enabled' => true,
+            'keys' => ['id' => $id, 'secret' => $key, 'key' => $id],
+            "includeEmail" => true,
+            'scope' => $scope,
+            'trustForwarded' => false,
+        ];
+
+        if ($_GET['type'] === 'Keycloak') {
+            $_config['scope'] = 'openid';
+            $_config['url'] = $url;
+            $_config['realm'] = $realm;
+        }
 
         $config = [
             'callback' => HttpClient\Util::getCurrentUrl() . "?type={$_GET['type']}",
             'providers' => [
-                $_GET['type'] => [
-                    'enabled' => true,
-                    'keys' => ['id' => $id, 'secret' => $key, 'key' => $id],
-                    "includeEmail" => true,
-                    'scope' => $scope,
-                    'trustForwarded' => false,
-                ],
+                $_GET['type'] => $_config,
             ],
                 /* optional : set debug mode
                   'debug_mode' => true,
