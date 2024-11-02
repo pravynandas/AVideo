@@ -26,6 +26,7 @@ services:
         MAIN_LANGUAGE: ${MAIN_LANGUAGE}
     restart: "unless-stopped"
     environment:
+      HTTPS: true
       SOCKET_PORT: ${SOCKET_PORT:-2053}
       HTTP_PORT: ${HTTP_PORT:-80}
       HTTPS_PORT: ${HTTP_PORT:-443}
@@ -50,10 +51,10 @@ services:
       NGINX_HTTPS_PORT: "${NGINX_HTTPS_PORT:-8443}"
     env_file:
       - .env
-    ports:
-      - "${SOCKET_PORT:-2053}:2053"
-      - "${HTTP_PORT:-80}:80"
-      - "${HTTPS_PORT:-443}:443"
+    # ports:
+    #   - "${SOCKET_PORT:-2053}:2053"
+    #   - "${HTTP_PORT:-80}:80"
+    #   - "${HTTPS_PORT:-443}:443"
     volumes:
       - "./.compose/tmp:/var/www/tmp"
       - "./.compose/HLS:/HLS"
@@ -72,7 +73,11 @@ services:
       timeout: 10s
       retries: 3
     networks:
-      - app_net
+      app_net:
+      main:
+        ipv4_address: 10.5.5.1
+        aliases:
+          - phpmyadmin
 
   live:
     build: 
@@ -84,6 +89,7 @@ services:
       - "./.compose/HLS:/HLS"
       - "./.compose/letsencrypt:/etc/letsencrypt/"
     environment:
+      HTTPS: true
       SERVER_NAME: "${SERVER_NAME:-localhost}"
       CREATE_TLS_CERTIFICATE: "${CREATE_TLS_CERTIFICATE:-yes}"
       TLS_CERTIFICATE_FILE: "${TLS_CERTIFICATE_FILE:-/etc/apache2/ssl/localhost.crt}"
@@ -95,8 +101,8 @@ services:
       - .env
     ports:
       - "${NGINX_RTMP_PORT:-1935}:1935"
-      - "${NGINX_HTTP_PORT:-8080}:8080"
-      - "${NGINX_HTTPS_PORT:-8443}:8443"
+      # - "${NGINX_HTTP_PORT:-8080}:8080"
+      # - "${NGINX_HTTPS_PORT:-8443}:8443"
     depends_on:
       avideo:
         condition: service_healthy
@@ -108,7 +114,11 @@ services:
       timeout: 10s
       retries: 3
     networks:
-      - app_net
+      app_net:
+      main:
+        ipv4_address: 10.5.5.2
+        aliases:
+          - phpmyadmin
 
   database:
     image: "mariadb:latest"
@@ -128,7 +138,11 @@ services:
       timeout: 10s
       retries: 3
     networks:
-      - app_net
+      app_net:
+      main:
+        ipv4_address: 10.5.5.3
+        aliases:
+          - phpmyadmin
 
   database_encoder:
     image: "mariadb:latest"
@@ -148,7 +162,11 @@ services:
       timeout: 10s
       retries: 3
     networks:
-      - app_net
+      app_net:
+      main:
+        ipv4_address: 10.5.5.4
+        aliases:
+          - phpmyadmin
 
   #http://localhost:8081
   phpmyadmin:
@@ -160,12 +178,16 @@ services:
       PMA_CONTROLUSER: "${DB_MYSQL_USER}"
       PMA_CONTROLPASS: "${DB_MYSQL_PASSWORD}"
       HIDE_PHP_VERSION: "true"
-    ports:
-      - "${PHPMYADMIN_PORT:-8081}:80"
+    # ports:
+    #   - "${PHPMYADMIN_PORT:-8081}:80"
     depends_on:
       - database
     networks:
-      - app_net
+      app_net:
+      main:
+        ipv4_address: 10.5.5.5
+        aliases:
+          - phpmyadmin
 
   #http://localhost:8082
   phpmyadmin_encoder:
@@ -177,13 +199,19 @@ services:
       PMA_CONTROLUSER: "${DB_MYSQL_USER}"
       PMA_CONTROLPASS: "${DB_MYSQL_PASSWORD}"
       HIDE_PHP_VERSION: "true"
-    ports:
-      - "${PHPMYADMIN_ENCODER_PORT:-8082}:80"
+    # ports:
+    #   - "${PHPMYADMIN_ENCODER_PORT:-8082}:80"
     depends_on:
       - database_encoder
     networks:
-      - app_net
+      app_net:
+      main:
+        ipv4_address: 10.5.5.6
+        aliases:
+          - phpmyadmin
 
 networks:
   app_net:
     driver: bridge
+  main:
+    external: true
