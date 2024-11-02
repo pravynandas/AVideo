@@ -99,3 +99,5 @@ plugin/CustomizeUser/getMyAccount.php
 /plugin/Gift/
 /plugin/Rebroadcaster/
 /plugin/VideoVoteSystem/
+dot_compose_bkp/
+.compose
