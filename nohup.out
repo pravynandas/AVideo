@@ -27,3 +27,107 @@ DO NOT CLOSE THIS TERMINAL
 2023-02-21 12:38:55 Using: 12.40MB RAM msgToResourceId: resourceId=(264) NEW_CONNECTION
 2023-02-21 12:38:55 Using: 12.39MB RAM msgToAll FROM (264) NEW_CONNECTION Total Clients: 1 in 0.0023 seconds
 2023-02-21 12:38:55 Using: 12.38MB RAM Connection opened in 0.0030 seconds
+[2024-04-27 00:00:29] AVideoLog::DEBUG: Socket server SQLite loading SCRIPT_NAME: /var/www/html/AVideo/plugin/YPTSocket/server.php
+AVideoLog::DEBUG: Socket server SQLite loading SCRIPT_NAME: /var/www/html/AVideo/plugin/YPTSocket/server.php
+[2024-04-27 00:00:29] AVideoLog::DEBUG: Starting Socket server at port 2053 SCRIPT_NAME: /var/www/html/AVideo/plugin/YPTSocket/server.php
+AVideoLog::DEBUG: Starting Socket server at port 2053 SCRIPT_NAME: /var/www/html/AVideo/plugin/YPTSocket/server.php
+Starting AVideo Socket server version 4.4 on port 2053
+Your socket server uses a secure connection
+Parameter [local_cert]: /etc/letsencrypt/live/localhost/fullchain.pem 
+Parameter [local_pk]: /etc/letsencrypt/live/localhost/privkey.pem 
+Parameter [allow_self_signed]: 1 
+Parameter [verify_peer]:  
+Parameter [verify_peer_name]:  
+Parameter [security_level]: 0 
+DO NOT CLOSE THIS TERMINAL 
+PHP Fatal error:  Uncaught RuntimeException: Failed to listen on "tcp://0.0.0.0:2053": Address already in use (EADDRINUSE) in /var/www/html/AVideo/vendor/react/socket/src/TcpServer.php:184
+Stack trace:
+#0 /var/www/html/AVideo/vendor/react/socket/src/Server.php(77): React\Socket\TcpServer->__construct()
+#1 /var/www/html/AVideo/plugin/YPTSocket/server.php(166): React\Socket\Server->__construct()
+#2 {main}
+  thrown in /var/www/html/AVideo/vendor/react/socket/src/TcpServer.php on line 184
+
+Fatal error: Uncaught RuntimeException: Failed to listen on "tcp://0.0.0.0:2053": Address already in use (EADDRINUSE) in /var/www/html/AVideo/vendor/react/socket/src/TcpServer.php:184
+Stack trace:
+#0 /var/www/html/AVideo/vendor/react/socket/src/Server.php(77): React\Socket\TcpServer->__construct()
+#1 /var/www/html/AVideo/plugin/YPTSocket/server.php(166): React\Socket\Server->__construct()
+#2 {main}
+  thrown in /var/www/html/AVideo/vendor/react/socket/src/TcpServer.php on line 184
+[2024-04-27 00:00:59] AVideoLog::DEBUG: Socket server SQLite loading SCRIPT_NAME: /var/www/html/AVideo/plugin/YPTSocket/server.php
+AVideoLog::DEBUG: Socket server SQLite loading SCRIPT_NAME: /var/www/html/AVideo/plugin/YPTSocket/server.php
+[2024-04-27 00:00:59] AVideoLog::DEBUG: Starting Socket server at port 2053 SCRIPT_NAME: /var/www/html/AVideo/plugin/YPTSocket/server.php
+AVideoLog::DEBUG: Starting Socket server at port 2053 SCRIPT_NAME: /var/www/html/AVideo/plugin/YPTSocket/server.php
+Starting AVideo Socket server version 4.4 on port 2053
+Your socket server uses a secure connection
+Parameter [local_cert]: /etc/letsencrypt/live/localhost/fullchain.pem 
+Parameter [local_pk]: /etc/letsencrypt/live/localhost/privkey.pem 
+Parameter [allow_self_signed]: 1 
+Parameter [verify_peer]:  
+Parameter [verify_peer_name]:  
+Parameter [security_level]: 0 
+DO NOT CLOSE THIS TERMINAL 
+PHP Fatal error:  Uncaught RuntimeException: Failed to listen on "tcp://0.0.0.0:2053": Address already in use (EADDRINUSE) in /var/www/html/AVideo/vendor/react/socket/src/TcpServer.php:184
+Stack trace:
+#0 /var/www/html/AVideo/vendor/react/socket/src/Server.php(77): React\Socket\TcpServer->__construct()
+#1 /var/www/html/AVideo/plugin/YPTSocket/server.php(166): React\Socket\Server->__construct()
+#2 {main}
+  thrown in /var/www/html/AVideo/vendor/react/socket/src/TcpServer.php on line 184
+
+Fatal error: Uncaught RuntimeException: Failed to listen on "tcp://0.0.0.0:2053": Address already in use (EADDRINUSE) in /var/www/html/AVideo/vendor/react/socket/src/TcpServer.php:184
+Stack trace:
+#0 /var/www/html/AVideo/vendor/react/socket/src/Server.php(77): React\Socket\TcpServer->__construct()
+#1 /var/www/html/AVideo/plugin/YPTSocket/server.php(166): React\Socket\Server->__construct()
+#2 {main}
+  thrown in /var/www/html/AVideo/vendor/react/socket/src/TcpServer.php on line 184
+[2024-04-27 17:48:44] AVideoLog::DEBUG: Socket server SQLite loading SCRIPT_NAME: /var/www/html/AVideo/plugin/YPTSocket/server.php
+AVideoLog::DEBUG: Socket server SQLite loading SCRIPT_NAME: /var/www/html/AVideo/plugin/YPTSocket/server.php
+[2024-04-27 17:48:44] AVideoLog::DEBUG: Starting Socket server at port 2053 SCRIPT_NAME: /var/www/html/AVideo/plugin/YPTSocket/server.php
+AVideoLog::DEBUG: Starting Socket server at port 2053 SCRIPT_NAME: /var/www/html/AVideo/plugin/YPTSocket/server.php
+Starting AVideo Socket server version 4.4 on port 2053
+Your socket server uses a secure connection
+Parameter [local_cert]: /etc/letsencrypt/live/localhost/fullchain.pem 
+Parameter [local_pk]: /etc/letsencrypt/live/localhost/privkey.pem 
+Parameter [allow_self_signed]: 1 
+Parameter [verify_peer]:  
+Parameter [verify_peer_name]:  
+Parameter [security_level]: 0 
+DO NOT CLOSE THIS TERMINAL 
+PHP Fatal error:  Uncaught RuntimeException: Failed to listen on "tcp://0.0.0.0:2053": Address already in use (EADDRINUSE) in /var/www/html/AVideo/vendor/react/socket/src/TcpServer.php:184
+Stack trace:
+#0 /var/www/html/AVideo/vendor/react/socket/src/Server.php(77): React\Socket\TcpServer->__construct()
+#1 /var/www/html/AVideo/plugin/YPTSocket/server.php(166): React\Socket\Server->__construct()
+#2 {main}
+  thrown in /var/www/html/AVideo/vendor/react/socket/src/TcpServer.php on line 184
+
+Fatal error: Uncaught RuntimeException: Failed to listen on "tcp://0.0.0.0:2053": Address already in use (EADDRINUSE) in /var/www/html/AVideo/vendor/react/socket/src/TcpServer.php:184
+Stack trace:
+#0 /var/www/html/AVideo/vendor/react/socket/src/Server.php(77): React\Socket\TcpServer->__construct()
+#1 /var/www/html/AVideo/plugin/YPTSocket/server.php(166): React\Socket\Server->__construct()
+#2 {main}
+  thrown in /var/www/html/AVideo/vendor/react/socket/src/TcpServer.php on line 184
+[2024-10-27 16:45:03] AVideoLog::DEBUG: Socket server SQLite loading SCRIPT_NAME: /var/www/html/AVideo/plugin/YPTSocket/server.php
+AVideoLog::DEBUG: Socket server SQLite loading SCRIPT_NAME: /var/www/html/AVideo/plugin/YPTSocket/server.php
+[2024-10-27 16:45:03] AVideoLog::DEBUG: Starting Socket server at port 2053 SCRIPT_NAME: /var/www/html/AVideo/plugin/YPTSocket/server.php
+AVideoLog::DEBUG: Starting Socket server at port 2053 SCRIPT_NAME: /var/www/html/AVideo/plugin/YPTSocket/server.php
+Starting AVideo Socket server version 4.4 on port 2053
+Your socket server uses a secure connection
+Parameter [local_cert]: /etc/letsencrypt/live/localhost/fullchain.pem 
+Parameter [local_pk]: /etc/letsencrypt/live/localhost/privkey.pem 
+Parameter [allow_self_signed]: 1 
+Parameter [verify_peer]:  
+Parameter [verify_peer_name]:  
+Parameter [security_level]: 0 
+DO NOT CLOSE THIS TERMINAL 
+PHP Fatal error:  Uncaught RuntimeException: Failed to listen on "tcp://0.0.0.0:2053": Address already in use (EADDRINUSE) in /var/www/html/AVideo/vendor/react/socket/src/TcpServer.php:184
+Stack trace:
+#0 /var/www/html/AVideo/vendor/react/socket/src/Server.php(77): React\Socket\TcpServer->__construct()
+#1 /var/www/html/AVideo/plugin/YPTSocket/server.php(166): React\Socket\Server->__construct()
+#2 {main}
+  thrown in /var/www/html/AVideo/vendor/react/socket/src/TcpServer.php on line 184
+
+Fatal error: Uncaught RuntimeException: Failed to listen on "tcp://0.0.0.0:2053": Address already in use (EADDRINUSE) in /var/www/html/AVideo/vendor/react/socket/src/TcpServer.php:184
+Stack trace:
+#0 /var/www/html/AVideo/vendor/react/socket/src/Server.php(77): React\Socket\TcpServer->__construct()
+#1 /var/www/html/AVideo/plugin/YPTSocket/server.php(166): React\Socket\Server->__construct()
+#2 {main}
+  thrown in /var/www/html/AVideo/vendor/react/socket/src/TcpServer.php on line 184
